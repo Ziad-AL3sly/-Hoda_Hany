@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>هدى هاني | Hoda Hany</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon"
+        href="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/541200836_1357494756377086_2013821297163473749_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=YhghkQ8gSEIQ7kNvwFhyugt&_nc_oc=AdrzO1j5QeXdXtIF7gAyYAHCv6FiY5ULP9kByi6Is0GeAqXp95YvVwJhfAFRKVWKIkI&_nc_zt=23&_nc_ht=scontent.fcai19-6.fna&_nc_gid=FBaURCC4Uvgbv1o1c1Je-g&_nc_ss=8&oh=00_AfxwIDIB03U9LaGQGurOcQT6y7ssyJ00HA7IDJrO34LUaA&oe=69C0ECDA" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            width: 100%;
+        }
+
+        /* قسم الهيرو */
+        .hero {
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .hero .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.2);
+            animation: float 8s infinite ease-in-out;
+            z-index: 0;
+        }
+
+        .bubble1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .bubble2 {
+            width: 300px;
+            height: 300px;
+            bottom: 10%;
+            right: 5%;
+            background: rgba(236, 72, 153, 0.15);
+            animation-duration: 12s;
+            animation-delay: 2s;
+        }
+
+        .bubble3 {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: 80%;
+            background: rgba(139, 92, 246, 0.1);
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-30px) scale(1.05);
+            }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            left: -100px;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(236, 72, 153, 0.05);
+            border-radius: 50%;
+            bottom: -150px;
+            right: -150px;
+            z-index: 0;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .hero-image-wrapper {
+            flex: 0 0 400px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-image {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #8b5cf6;
+            box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.5);
+            margin: 0 auto;
+            transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+            animation: glowPulse 3s infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            0% {
+                box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.5), 0 0 0 0 #8b5cf6;
+                border-color: #8b5cf6;
+            }
+
+            100% {
+                box-shadow: 0 30px 50px -10px #a78bfa, 0 0 20px 5px #a78bfa;
+                border-color: #c084fc;
+            }
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 35px 50px -20px #000000cc;
+            border-color: #a78bfa;
+            animation: none;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            color: white;
+        }
+
+        .hero-text .badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border: 1px solid #8b5cf6;
+            margin-bottom: 25px;
+            color: white;
+            animation: slideInDown 1s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hero-text h1 {
+            font-size: 58px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: slideInLeft 1s ease-out 0.2s both;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .hero-text .lead {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 35px;
+            max-width: 600px;
+            line-height: 1.8;
+            animation: fadeIn 1.5s ease-out 0.4s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 15px 25px;
+            border: 2px solid #8b5cf6;
+            max-width: 100%;
+            width: fit-content;
+            box-shadow: 0 10px 30px -10px #8b5cf6;
+            animation: zoomIn 1s ease-out 0.6s both;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 100px;
+            padding: 5px 10px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 40px;
+            background: #8b5cf6;
+            border-radius: 2px;
+        }
+
+        .stat-number {
+            font-size: 40px;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            direction: ltr;
+            display: inline-block;
+            text-shadow: 0 0 15px #8b5cf6;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #8b5cf6;
+            font-weight: 700;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .stat-label i {
+            font-size: 18px;
+            color: white;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::after,
+        .btn-secondary::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+
+        .btn-primary:hover::after,
+        .btn-secondary:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: #25D366;
+            color: white;
+            box-shadow: 0 8px 20px -8px #25D36680;
+        }
+
+        .btn-primary:hover {
+            background: #20ba5a;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -8px #25D366;
+        }
+
+        .btn-secondary {
+            background: #8b5cf6;
+            color: white;
+            box-shadow: 0 8px 20px -8px #8b5cf680;
+        }
+
+        .btn-secondary:hover {
+            background: #7c3aed;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -8px #8b5cf6;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid #8b5cf6;
+            border-radius: 16px;
+            color: white;
+            font-size: 26px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: #8b5cf6;
+            color: white;
+            transform: translateY(-5px) rotate(5deg) scale(1.1);
+            border-color: white;
+            box-shadow: 0 10px 20px -5px #8b5cf6;
+        }
+
+        .stats {
+            padding: 70px 0;
+            background: #f1f5f9;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #0f172a;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #8b5cf6, #ec4899);
+            margin: 15px auto 0;
+            border-radius: 2px;
+            transition: width 0.5s ease;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 35px 15px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s;
+            transform: scale(0);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .stat-card * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 40px -12px #8b5cf680;
+        }
+
+        .stat-card.highlight {
+            background: #0f172a;
+            color: white;
+            box-shadow: 0 25px 40px -10px #0f172a;
+        }
+
+        .stat-number-large {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+
+        .stat-card.highlight .stat-number-large {
+            color: #fbbf24;
+        }
+
+        .stat-card .stat-label {
+            font-size: 18px;
+            font-weight: 500;
+            color: #64748b;
+        }
+
+        .stat-card.highlight .stat-label {
+            color: #cbd5e1;
+        }
+
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .content-section.bg-light {
+            background: #ffffff;
+        }
+
+        .content-section.bg-muted {
+            background: #f8fafc;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .content-grid.reverse {
+            direction: rtl;
+        }
+
+        .content-media {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.5s, transform 0.5s, border-color 0.5s;
+            border: 2px solid transparent;
+            transform-style: preserve-3d;
+        }
+
+        .content-media:hover {
+            box-shadow: 0 30px 50px -15px #8b5cf6;
+            border-color: #8b5cf6;
+            transform: rotateY(2deg) rotateX(1deg) scale(1.02);
+        }
+
+        .content-media img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s;
+        }
+
+        .content-media:hover img {
+            transform: scale(1.1);
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            backdrop-filter: blur(2px);
+        }
+
+        .content-media:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-button {
+            width: 70px;
+            height: 70px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            padding-left: 5px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s;
+        }
+
+        .play-button:hover {
+            transform: scale(1.15) rotate(10deg);
+            background: #7c3aed;
+        }
+
+        .content-text {
+            padding: 15px;
+        }
+
+        .content-text .platform-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139, 92, 246, 0.1);
+            color: #8b5cf6;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .content-text .platform-tag:hover {
+            background: rgba(139, 92, 246, 0.2);
+            transform: scale(1.05);
+        }
+
+        .content-text h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #0f172a;
+        }
+
+        .content-text p {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .content-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #8b5cf6;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+            transition: gap 0.4s, border-color 0.4s, color 0.3s;
+        }
+
+        .content-link:hover {
+            gap: 20px;
+            border-bottom-color: #8b5cf6;
+            color: #7c3aed;
+        }
+
+        .videos-section {
+            background: #f1f5f9;
+            padding: 70px 0;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 1000px;
+            margin: 30px auto 0;
+        }
+
+        .video-item {
+            position: relative;
+            aspect-ratio: 9 / 16;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: border-color 0.4s, transform 0.5s, box-shadow 0.5s;
+            cursor: pointer;
+        }
+
+        .video-item:hover {
+            border-color: #8b5cf6;
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 35px -12px rgba(139, 92, 246, 0.5);
+        }
+
+        .video-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s;
+        }
+
+        .video-item:hover img {
+            transform: scale(1.15);
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .video-item:hover .video-overlay {
+            opacity: 1;
+        }
+
+        .video-play-icon {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0f172a;
+            font-size: 22px;
+            padding-left: 4px;
+            transform: scale(0.8);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s, color 0.3s;
+        }
+
+        .video-item:hover .video-play-icon {
+            transform: scale(1.1);
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .brands {
+            padding: 70px 0;
+            background: #ffffff;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 30px auto 0;
+        }
+
+        .brand-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 20px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s;
+            aspect-ratio: 3 / 2;
+        }
+
+        .brand-item:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 20px 30px -10px rgba(139, 92, 246, 0.3);
+            border-color: #8b5cf6;
+        }
+
+        .brand-item img {
+            max-width: 80%;
+            max-height: 50px;
+            object-fit: contain;
+            filter: grayscale(0.3);
+            transition: filter 0.3s, transform 0.3s;
+        }
+
+        .brand-item:hover img {
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+
+        .footer {
+            background: #0f172a;
+            color: white;
+            padding: 50px 0 30px;
+            border-top: 2px solid #8b5cf6;
+        }
+
+        .footer .social-icons {
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .footer .social-icons a {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.03);
+            border-color: #8b5cf6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer .social-icons a:hover {
+            background: #8b5cf6;
+            color: white;
+            border-color: white;
+        }
+
+        .footer-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .footer-info h4 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #f1f5f9;
+        }
+
+        .footer-info p {
+            color: #8b5cf6;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #475569;
+            font-size: 14px;
+            border-top: 1px solid #1e293b;
+            padding-top: 25px;
+        }
+
+        /* تحسينات الجوال */
+        @media (max-width: 480px) {
+            .hero {
+                padding: 40px 0;
+                min-height: auto;
+            }
+
+            .hero-image-wrapper {
+                flex: 0 0 100%;
+            }
+
+            .hero-image {
+                width: 250px;
+                height: 250px;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .hero-text .lead {
+                font-size: 15px;
+            }
+
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+                border-radius: 30px;
+                width: 100%;
+                padding: 15px;
+            }
+
+            .stat-item {
+                width: 100%;
+                border-bottom: 2px solid #8b5cf6;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+            }
+
+            .stat-item:not(:last-child)::after {
+                display: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-grid.reverse {
+                direction: ltr;
+            }
+
+            .content-text {
+                text-align: center;
+            }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+                max-width: 280px;
+            }
+
+            .brands-grid {
+                grid-template-columns: 1fr;
+                max-width: 250px;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 768px) {
+            .hero-image {
+                width: 280px;
+                height: 280px;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .stats-container {
+                padding: 15px 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        #backToTopBtn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #8b5cf6;
+            color: white;
+            border: 2px solid white;
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            box-shadow: 0 5px 20px rgba(139, 92, 246, 0.5);
+            transition: all 0.3s;
+        }
+
+        #backToTopBtn:hover {
+            background: #7c3aed;
+            transform: translateY(-5px);
+        }
+
+        #backToTopBtn.show {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            #backToTopBtn {
+                bottom: 20px;
+                left: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="bubble bubble1"></div>
+        <div class="bubble bubble2"></div>
+        <div class="bubble bubble3"></div>
+
+        <div class="container">
+            <div class="hero-content reverse">
+                <div class="hero-image-wrapper" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="hero-image">
+                        <img src="https://scontent.fcai19-6.fna.fbcdn.net/v/t39.30808-6/541200836_1357494756377086_2013821297163473749_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=EsI6LnfRPtIQ7kNvwEOiJ9-&_nc_oc=AdnKoJGhPT5VajiwEC0RVx1gC2WFNFfIneeb-70PldOD1ecXS_wfHF0ue9HtYvPKPz0&_nc_zt=23&_nc_ht=scontent.fcai19-6.fna&_nc_gid=5kys8iZPuAW4vyTwsTzdug&_nc_ss=8&oh=00_Afzf52tz3o4t_qJDVCkZpJhzuDiU2Qt7BkIi7QZTHHaP0g&oe=69BD309A"
+                            alt="هدى هاني">
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <span class="badge"><i class="fas fa-star" style="margin-left: 5px;"></i> صانعة محتوى</span>
+                    <h1>هدى هاني <span
+                            style="display: inline-block; background: #009dff; color: white; font-size: 24px; width: 40px; height: 40px; line-height: 40px; text-align: center; border-radius: 50%; margin-right: 10px; vertical-align: middle; box-shadow: 0 4px 10px rgba(29, 161, 242, 0.5);"><i
+                                class="fas fa-check"></i></span></h1>
+                    <p class="lead">
+                        هدى هاني، صانعة محتوى مصرية. أوثق يومياتي وأشارككم لحظاتي البسيطة
+                        بأسلوب صادق وقريب من الناس. مهتمة بمشاركة التفاصيل الصغيرة، التجهيزات،
+                        واللحظات الحقيقية من الحياة اليومية.
+                    </p>
+
+                    <div class="stats-container" id="counterSection">
+                        <div class="stat-item">
+                            <a href="https://youtube.com/@hodaaa_hany" target="_blank"
+                                style="text-decoration: none; color: inherit;">
+                                <span class="stat-number" id="youtubeCounter" data-target="87">0</span><span
+                                    class="stat-number">K+</span>
+                            </a>
+                            <a href="https://youtube.com/@hodaaa_hany" target="_blank"
+                                style="text-decoration: none; color: inherit;">
+                                <div class="stat-label"><i class="fab fa-youtube"></i> يوتيوب</div>
+                            </a>
+                        </div>
+                        <div class="stat-item">
+                            <a href="https://www.tiktok.com/@hodaaa_hany" target="_blank"
+                                style="text-decoration: none; color: inherit;">
+                                <span class="stat-number" id="tiktokCounter" data-target="78">0</span><span
+                                    class="stat-number">K+</span>
+                            </a>
+                            <a href="https://www.tiktok.com/@hodaaa_hany" target="_blank"
+                                style="text-decoration: none; color: inherit;">
+                                <div class="stat-label"><i class="fab fa-tiktok"></i> تيك توك</div>
+                            </a>
+                        </div>
+                        <div class="stat-item">
+                            <a href="https://www.instagram.com/hodaaa_hany/" target="_blank"
+                                style="text-decoration: none; color: inherit;">
+                                <span class="stat-number" id="instagramCounter" data-target="207">0</span><span
+                                    class="stat-number">K+</span>
+                            </a>
+                            <a href="https://www.instagram.com/hodaaa_hany/" target="_blank"
+                                style="text-decoration: none; color: inherit;">
+                                <div class="stat-label"><i class="fab fa-instagram"></i> انستجرام</div>
+                            </a>
+                        </div>
+                        <div class="stat-item">
+                            <a href="https://facebook.com/hodaaa.hany.ahmed" target="_blank"
+                                style="text-decoration: none; color: inherit;">
+                                <span class="stat-number" id="facebookCounter" data-target="134">0</span><span
+                                    class="stat-number">K+</span>
+                            </a>
+                            <a href="https://facebook.com/hodaaa.hany.ahmed" target="_blank"
+                                style="text-decoration: none; color: inherit;">
+                                <div class="stat-label"><i class="fab fa-facebook"></i> فيسبوك </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="mailto:hodaaahany@gmail.com" class="btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            <span>للتعاون والإعلانات</span>
+                        </a>
+                        <a href="links.html" class="btn-secondary" target="_blank">
+                            <i class="fas fa-link"></i>
+                            <span>جميع لينكاتي</span>
+                        </a>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/hodaaa_hany/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@hodaaa_hany" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com/@hodaaa_hany" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://facebook.com/hodaaa.hany.ahmed" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <h2 class="section-title" data-aos="title-zoom" data-aos-duration="800">إحصائيات</h2>
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="flip-right" data-aos-delay="100">
+                    <div class="stat-number-large">506K+</div>
+                    <div class="stat-label"><i class="fas fa-users" style="margin-left: 5px;"></i> متابع</div>
+                </div>
+                <div class="stat-card highlight" data-aos="flip-up" data-aos-delay="200">
+                    <div class="stat-number-large">85K+</div>
+                    <div class="stat-label"><i class="fas fa-chart-line"></i> مشاهدة أسبوعياً</div>
+                </div>
+                <div class="stat-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="stat-number-large">2,200K+</div>
+                    <div class="stat-label"><i class="fas fa-video"></i> فيديو</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section bg-light" style="padding-bottom: 20px;" data-aos="fade-down">
+        <div class="container">
+            <h2 class="section-title">محتوى هدى</h2>
+        </div>
+    </section>
+
+    <section class="content-section bg-light">
+        <div class="container">
+            <a href="https://www.youtube.com/@hodaaa_hany" target="_blank"
+                style="text-decoration: none; color: inherit;">
+                <div class="content-grid reverse" data-aos="fade-left">
+                    <div class="content-media">
+                        <img src="https://img.youtube.com/vi/jlbGIzLpaLs/maxresdefault.jpg" alt="يوميات هدى">
+                        <div class="play-overlay">
+                            <div class="play-button"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                    <div class="content-text">
+                        <span class="platform-tag"><i class="fab fa-youtube" style="font-size: 18px;"></i> يوتيوب</span>
+                        <h2>يوميات هدى</h2>
+                        <p>لحظات حقيقية من الحياة اليومية، نعيشها معاً بكل صدق وبساطة. رحلة يومية مليئة بالتفاصيل
+                            الصغيرة التي تصنع السعادة.</p>
+                        <span class="content-link">شاهد الآن <i class="fas fa-arrow-left"></i></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="content-section bg-muted">
+        <div class="container">
+            <a href="https://www.tiktok.com/@hodaaa_hany" target="_blank"
+                style="text-decoration: none; color: inherit;">
+                <div class="content-grid" data-aos="fade-right">
+                    <div class="content-media">
+                        <img src="https://via.placeholder.com/800x450/8b5cf6/ffffff?text=%D8%AA%D8%AC%D9%87%D9%8A%D8%B2%D8%A7%D8%AA+%D9%87%D8%AF%D9%89"
+                            alt="تجهيزات هدى">
+                        <div class="play-overlay">
+                            <div class="play-button"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                    <div class="content-text">
+                        <span class="platform-tag"><i class="fab fa-tiktok"></i> تيك توك</span>
+                        <h2>تجهيزات</h2>
+                        <p>أفكار إبداعية وتجهيزات مميزة للمناسبات المختلفة، خطوة بخطوة. من التخطيط إلى التنفيذ، كل
+                            التفاصيل بطريقة مبسطة.</p>
+                        <span class="content-link">شاهد الآن <i class="fas fa-arrow-left"></i></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="content-section bg-light">
+        <div class="container">
+            <a href="https://www.instagram.com/hodaaa_hany/" target="_blank"
+                style="text-decoration: none; color: inherit;">
+                <div class="content-grid reverse" data-aos="fade-left">
+                    <div class="content-media">
+                        <img src="https://via.placeholder.com/800x450/8b5cf6/ffffff?text=%D8%B1%D9%88%D8%AA%D9%8A%D9%86+%D9%8A%D9%88%D9%85%D9%8A"
+                            alt="روتين هدى اليومي">
+                        <div class="play-overlay">
+                            <div class="play-button"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                    <div class="content-text">
+                        <span class="platform-tag"><i class="fab fa-instagram"></i> انستجرام</span>
+                        <h2>روتيني اليومي</h2>
+                        <p>جولة سريعة في يومي من خلال الستوريز. لحظات عفوية، نصائح سريعة، وتفاصيل صغيرة من الحياة
+                            الحقيقية.</p>
+                        <span class="content-link">شاهد الآن <i class="fas fa-arrow-left"></i></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+    <section class="videos-section" data-aos="zoom-in-up">
+        <div class="container">
+            <h2 class="section-title">أكثر الفيديوهات مشاهدة</h2>
+            <div class="videos-grid">
+                <a href="https://www.instagram.com/reel/DQ7OHu7DCfn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                    target="_blank" class="video-item" data-aos="flip-left" data-aos-delay="100">
+                    <img src="images/Most Viewed V1.jpeg" alt="فيديو 1">
+                    <div class="video-overlay">
+                        <div class="video-play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/reel/DPCHPN5jGyz/?igsh=cTl2aGQ5amc2aTg2" target="_blank"
+                    class="video-item" data-aos="flip-left" data-aos-delay="200">
+                    <img src="images/Most Viewed V2.jpeg" alt="فيديو 2">            
+                    <div class="video-overlay">
+                        <div class="video-play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/share/r/18Pxt8FJrh/" target="_blank" class="video-item"
+                    data-aos="flip-left" data-aos-delay="300">
+                    <img src="images/Most Viewed V3.jpeg" alt="فيديو 3">
+                    <div class="video-overlay">
+                        <div class="video-play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                </a>
+                <a href="https://youtu.be/VIDEO_ID_4" target="_blank" class="video-item" data-aos="flip-left"
+                    data-aos-delay="400">
+                    <img src="https://via.placeholder.com/300x533/8b5cf6/ffffff?text=4" alt="فيديو 4">
+                    <div class="video-overlay">
+                        <div class="video-play-icon"><i class="fas fa-play"></i></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- قمة صناع المحتوى (معلقة) -->
+    <!-- <section class="summit">
+        <div class="container">
+            <div class="summit-grid">
+                <div class="summit-image">
+                    <img src="https://via.placeholder.com/400x711/8b5cf6/ffffff?text=%D9%87%D8%AF%D9%89"
+                        alt="هدى هاني في القمة">
+                </div>
+                <div class="summit-content">
+                    <div class="summit-tag">
+                        <i class="fas fa-hashtag"></i> #يوميات_هدى
+                    </div>
+                    <h2>هدى هاني متحدثة في <span>قمة صناع المحتوى</span></h2>
+                    <p>
+                        هدى هاني، صانعة المحتوى التي تمزج بين البساطة والصدق في تقديم اليوميات والتجهيزات،
+                        تنضم كمتحدثة إلى قمة صناع المحتوى العرب لمشاركة تجربتها الملهمة.
+                    </p>
+                    <div class="summit-meta">
+                        <div class="meta-item"><i class="fas fa-calendar-alt"></i> 15-17 مايو 2026</div>
+                        <div class="meta-item"><i class="fas fa-map-marker-alt"></i> القاهرة، مصر</div>
+                    </div>
+                    <div class="summit-stats">
+                        <div class="follower-count">
+                            <span class="number">130K+</span>
+                            <span class="label">متابع</span>
+                        </div>
+                        <a href="https://www.instagram.com/hodaaa_hany/" target="_blank" class="official-account">
+                            <span>@hodaaa_hany</span>
+                            <i class="fas fa-arrow-left"></i>
+                            <span style="color: #64748b; font-weight: 400;">الحساب الرسمي</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- <section class="brands" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">أبرز التعاونات</h2>
+            <div class="brands-grid">
+                <div class="brand-item" data-aos="zoom-in" data-aos-delay="50">
+                    <img src="https://instagram.fcai19-6.fna.fbcdn.net/v/t51.2885-19/448918078_485833197431988_3900406813759342486_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby40MDAuYzIifQ&_nc_ht=instagram.fcai19-6.fna.fbcdn.net&_nc_cat=100&_nc_oc=Q6cZ2QFA7FmQWixUiDuxX-yoA4t_P9rQAatEp31vf1KLut70p_55ZOfoigj_Nn06VbZkQTM&_nc_ohc=MTes_TohZ5EQ7kNvwFbLzw8&_nc_gid=KQgcQOI27JBOIxWhIafplw&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AfzpgZc0YvpDy4efKmMZ98MfjuJ_zNDjEVCA6zN3p-kxfg&oe=69BCF5D5&_nc_sid=7d3ac5"
+                        alt="Brand 1">
+                </div>
+                <div class="brand-item" data-aos="zoom-in" data-aos-delay="150">
+                    <img src="https://via.placeholder.com/200x100/8b5cf6/ffffff?text=Brand+2" alt="Brand 2">
+                </div>
+                <div class="brand-item" data-aos="zoom-in" data-aos-delay="250">
+                    <img src="https://via.placeholder.com/200x100/8b5cf6/ffffff?text=Brand+3" alt="Brand 3">
+                </div>
+                <div class="brand-item" data-aos="zoom-in" data-aos-delay="350">
+                    <img src="https://via.placeholder.com/200x100/8b5cf6/ffffff?text=Brand+4" alt="Brand 4">
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/hodaaa_hany/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@hodaaa_hany" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://youtube.com/@hodaaa_hany" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://facebook.com/hodaaa.hany.ahmed" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+            <div class="footer-info">
+                <h4>هدى هاني</h4>
+                <p>Hoda Hany</p>
+            </div>
+            <div class="copyright">
+                © 2026 هدى هاني. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 600,
+            easing: 'ease-out-quart',
+        });
+
+        function startCounters() {
+            const counters = [
+                { id: 'youtubeCounter', target: 87 },
+                { id: 'tiktokCounter', target: 78 },
+                { id: 'instagramCounter', target: 207 },
+                { id: 'facebookCounter', target: 134 }
+            ];
+
+            counters.forEach(counter => {
+                const element = document.getElementById(counter.id);
+                if (element) {
+                    let current = 0;
+                    const steps = 60;
+                    const increment = counter.target / steps;
+                    let step = 0;
+
+                    const timer = setInterval(() => {
+                        step++;
+                        current += increment;
+                        if (step >= steps) {
+                            element.textContent = counter.target;
+                            clearInterval(timer);
+                        } else {
+                            element.textContent = Math.floor(current);
+                        }
+                    }, 2000 / steps);
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(startCounters, 300);
+        });
+
+        window.onscroll = function () {
+            const btn = document.getElementById('backToTopBtn');
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>
