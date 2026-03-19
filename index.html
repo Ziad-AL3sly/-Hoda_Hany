@@ -1039,6 +1039,29 @@
                 font-size: 20px;
             }
         }
+
+        /* تحسينات قسم الفيديوهات للجوال */
+        @media (max-width: 768px) {
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px;
+                max-width: 100%;
+                padding: 0 10px;
+            }
+
+            .video-item {
+                aspect-ratio: 9 / 16;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .videos-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                max-width: 100%;
+                gap: 8px;
+            }
+        }
     </style>
 </head>
 
@@ -1247,7 +1270,7 @@
                 </a>
                 <a href="https://www.instagram.com/reel/DPCHPN5jGyz/?igsh=cTl2aGQ5amc2aTg2" target="_blank"
                     class="video-item" data-aos="flip-left" data-aos-delay="200">
-                    <img src="images/Most Viewed V2.jpeg" alt="فيديو 2">            
+                    <img src="images/Most Viewed V2.jpeg" alt="فيديو 2">
                     <div class="video-overlay">
                         <div class="video-play-icon"><i class="fas fa-play"></i></div>
                     </div>
