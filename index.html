@@ -1282,8 +1282,8 @@
                         <div class="video-play-icon"><i class="fas fa-play"></i></div>
                     </div>
                 </a>
-                <a href="https://www.instagram.com/reel/DLxrA17MDxm/?igsh=MTR5d2EyeW9sbTI5eA==" target="_blank" class="video-item" data-aos="flip-left"
-                    data-aos-delay="400">
+                <a href="https://www.instagram.com/reel/DLxrA17MDxm/?igsh=MTR5d2EyeW9sbTI5eA==" target="_blank"
+                    class="video-item" data-aos="flip-left" data-aos-delay="400">
                     <img src="images/Most Viewed V4.jpeg" alt="فيديو 4">
                     <div class="video-overlay">
                         <div class="video-play-icon"><i class="fas fa-play"></i></div>
@@ -1427,6 +1427,93 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // تحديث الكود الخاص بالعدادات - يبدأ العد عند الوصول لقسم الإحصائيات
+        document.addEventListener('DOMContentLoaded', function () {
+            // العداد الخاص بقسم الهيرو (يبدأ فور تحميل الصفحة)
+            setTimeout(startHeroCounters, 300);
+
+            // العداد الخاص بقسم الإحصائيات (يبدأ عند الوصول للقسم)
+            const statsSection = document.querySelector('.stats');
+            let statsCountersStarted = false;
+
+            function startStatsCounters() {
+                if (statsCountersStarted) return;
+                statsCountersStarted = true;
+
+                const statsNumbers = [
+                    { element: document.querySelector('.stat-card:first-child .stat-number-large'), target: 506 },
+                    { element: document.querySelector('.stat-card.highlight .stat-number-large'), target: 85 },
+                    { element: document.querySelector('.stat-card:last-child .stat-number-large'), target: 2000 }
+                ];
+
+                statsNumbers.forEach(stat => {
+                    if (!stat.element) return;
+                    let current = 0;
+                    let target = stat.target;
+                    let duration = 3000;
+                    let steps = 60;
+                    let increment = target / steps;
+                    let step = 0;
+
+                    const timer = setInterval(() => {
+                        step++;
+                        current += increment;
+                        if (step >= steps) {
+                            stat.element.textContent = target.toLocaleString() + 'K+';
+                            clearInterval(timer);
+                        } else {
+                            stat.element.textContent = Math.floor(current).toLocaleString() + 'K+';
+                        }
+                    }, duration / steps);
+                });
+            }
+
+            // مراقبة التمرير للوصول لقسم الإحصائيات
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startStatsCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+
+            // دالة العداد الخاص بقسم الهيرو
+            function startHeroCounters() {
+                const counters = [
+                    { id: 'youtubeCounter', target: 87 },
+                    { id: 'tiktokCounter', target: 78 },
+                    { id: 'instagramCounter', target: 207 },
+                    { id: 'facebookCounter', target: 134 }
+                ];
+
+                counters.forEach(counter => {
+                    const element = document.getElementById(counter.id);
+                    if (element) {
+                        let current = 0;
+                        const steps = 60;
+                        const increment = counter.target / steps;
+                        let step = 0;
+
+                        const timer = setInterval(() => {
+                            step++;
+                            current += increment;
+                            if (step >= steps) {
+                                element.textContent = counter.target;
+                                clearInterval(timer);
+                            } else {
+                                element.textContent = Math.floor(current);
+                            }
+                        }, 2000 / steps);
+                    }
+                });
+            }
+        });
     </script>
 </body>
 
